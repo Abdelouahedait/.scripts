@@ -27,15 +27,18 @@ A bash script that displays Islamic reminders (أذكار) as desktop notificati
 ### Installation
 ```bash
 cd ~
-git clone https://github.com/abdelouahedait/.scripts
+git clone git@github.com:Abdelouahedait/.scripts.git
 chmod +x .scripts/adkar.sh
+```
+### Usage
+To have the script run automatically on system startup, add the following lines to your ~/.bashrc.
+```bash
 vi .bashrc  # Add the script to run on startup if desired
-    ```vim
-    # to Start Dhikr Notifications on login add this line at the end of .bashrc
-    if [ -z "$DHIKR_STARTED" ] && [ -n "$DISPLAY" ]; then
-        export DHIKR_STARTED=1
-        ( ~/.scripts/adkar.sh) &
-    fi
-    ```
+```
+```bash
+# to Start Dhikr Notifications on login add this line at the end of .bashrc
+~/.scripts/adkar.sh &
+```
+```bash
 source ~/.bashrc
 ```

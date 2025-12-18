@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Dhikr Notifications Script
+# Displays Islamic reminders with Islamic-themed icons
+
+sleep 3
+
 adhkar_list=(
     "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ"
     "سُبْحَانَ اللَّهِ الْعَظِيمِ"
@@ -11,33 +16,29 @@ adhkar_list=(
     "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ"
     "رَبِّ اغْفِرْ لِي"
     "اللَّهُمَّ ارْحَمْنِي"
-)
-
-icons_list=(
-
-    "emblem-favorite"           # ⭐ (نجمة/مفضلة)
-    "islamic-star-and-crescent" # ☪️ (هلال ونجمة إسلامية
-    "ismamic-mosque"          # 🕌 (مسجد إسلامي
-    "prayer-beads"              # 📿 (مسبحة صلاة)
-    "kaaba"                     # 🕋 (الكعبة المشرفة
-    "place-of-worship"        # 🛐 (مكان عبادة عامة
-    "dove-of-peace"          # 🕊️ (حمامة السلام
+    "اللَّهُمَّ انْصُرْنِي"
+    "اللَّهُمَّ اهْدِنِي"
+    "رَبِّ زِدْنِي عِلْمًا"
+    "اللَّهُمَّ أَعِنِّي"
+    "اللَّهُمَّ اغْفِرْ لِي"
+    "سُبْحَانَ اللَّهِ الْعَظِيمِ وَبِحَمْدِهِ"
+    "لَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ"
+    "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ"
 )
 
 total_adhkar=${#adhkar_list[@]}
-total_icons=${#icons_list[@]}
 current_index=0
-icon_index=0
+
+echo "Dhikr Notifications started at $(date)" >> ~/dhikr_log.txt
 
 while true; do
-    notify-send "${adhkar_list[$current_index]}" \
+    notify-send "📿 لا تنسى ذكر الله" \
+        "${adhkar_list[$current_index]}" \
         -u normal \
-        -i "${icons_list[$icon_index]}" \
+        -i "emblem-favorite" \
         -h string:fgcolor:#9b59b6 \
         -h string:bgcolor:#2c3e50 \
-        -t 90000
-    
+        -t 60000
     current_index=$(( (current_index + 1) % total_adhkar ))
-    icon_index=$(( (icon_index + 1) % total_icons ))
     sleep 60
-done &
+done
