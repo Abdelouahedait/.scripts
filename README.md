@@ -31,14 +31,7 @@ git clone git@github.com:Abdelouahedait/.scripts.git
 chmod +x .scripts/adkar.sh
 ```
 ### Usage
-To have the script run automatically on system startup, add the following lines to your ~/.bashrc.
+To have the script run automatically on system startup, run the following command:
 ```bash
-vi .bashrc  # Add the script to run on startup if desired
-```
-```bash
-# to Start Dhikr Notifications on login add this line at the end of .bashrc
-~/.scripts/adkar.sh &
-```
-```bash
-source ~/.bashrc
+echo "~/.scripts/adkar.sh &" >> ~/.profile
 ```
