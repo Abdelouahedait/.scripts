@@ -25,10 +25,9 @@ A bash script that displays Islamic reminders (أذكار) as desktop notificati
 - Bash shell
 
 ### Installation
+Clone the repository to your home directory:
 ```bash
-cd ~
-git clone git@github.com:Abdelouahedait/.scripts.git
-chmod +x .scripts/adkar.sh
+cd && git clone git@github.com:Abdelouahedait/.scripts.git
 ```
 ### Usage
 To have the script run automatically on system startup, run the following command:
